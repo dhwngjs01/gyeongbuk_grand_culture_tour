@@ -1,0 +1,126 @@
+/* 초기화 */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  overflow-y: scroll;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+img {
+  border: 0;
+}
+
+button {
+  background: none;
+  border: 1px solid #999;
+}
+
+body {
+  font-size: 14px;
+}
+
+/* 전체 레이아웃 */
+.wrap {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+#header {
+  height: 70px;
+}
+
+#header > .wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+/* 검색 폼 */
+#search-form {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+#search-form > label {
+  display: none;
+}
+
+#search-form > input {
+  width: 200px;
+  height: 40px;
+  border: 1px solid #999;
+  border-radius: 7px;
+  padding: 0 40px 0 10px;
+}
+
+#search-form > button {
+  position: absolute;
+  right: 10px;
+  width: 20px;
+  border: 0;
+}
+
+/* 메뉴 */
+.main-menu {
+  display: flex;
+  gap: 50px;
+}
+
+.main-menu > li > ul {
+  display: none;
+}
+
+/* 로그인 회원가입 버튼 */
+.member-menu {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+/* 햄버거 메뉴 */
+.nav-trigger > label > img {
+  width: 24px;
+  height: 24px;
+  border: 0;
+}
+
+.close-hamburger {
+  display: none;
+}
+
+#open-hamburger:checked ~ .open-hamburger {
+  display: none;
+}
+
+#open-hamburger:checked ~ .close-hamburger {
+  display: inline;
+}
+
+#close-hamburger:checked ~ .close-hamburger {
+  display: none;
+}
+
+#close-hamburger:checked ~ .open-hamburger {
+  display: inline;
+}
+
+/* 공통 스타일 */
+.d-none {
+  display: none;
+}
