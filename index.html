@@ -9,14 +9,9 @@
   <body>
     <header id="header">
       <div class="wrap">
-        <h1 id="logo"><a href="#">경북그랜드문화투어</a></h1>
-        <form id="search-form" action="#" method="get">
-          <label for="search" class="hidden">검색어 입력</label>
-          <input type="text" name="search" id="search" placeholder="검색..." />
-          <button type="submit">
-            <img src="images/icon/search.svg" alt="검색" />
-          </button>
-        </form>
+        <h1 id="logo">
+          <a href="#"><img src="images/logo/logo.png" alt="LOGO" /></a>
+        </h1>
         <nav id="navigation">
           <ul class="main-menu">
             <li>
@@ -49,15 +44,54 @@
             </li>
           </ul>
         </nav>
+        <form id="search-form" action="#" method="get">
+          <input type="text" name="search" id="search" placeholder="검색..." />
+          <button type="submit">
+            <img src="images/icon/search.svg" alt="검색" />
+          </button>
+        </form>
         <ul class="member-menu">
-          <li><a href="#">로그인</a></li>
-          <li><a href="#">회원가입</a></li>
+          <li><label for="open-login-modal">로그인</label></li>
+          <li><label for="open-join-modal">회원가입</label></li>
         </ul>
         <div class="nav-trigger">
           <input type="radio" name="hamburger" id="open-hamburger" class="d-none" />
-          <input type="radio" name="hamburger" id="close-hamburger" class="d-none" />
+          <input type="radio" name="hamburger" id="close-hamburger" class="d-none" checked />
           <label for="open-hamburger" class="open-hamburger"><img src="images/icon/hamburger.svg" alt="햄버거 메뉴" /></label>
           <label for="close-hamburger" class="close-hamburger"><img src="images/icon/x.svg" alt="햄버거 메뉴 닫기" /></label>
+          <!-- 우측에서 메인 메뉴가 나타남 -->
+          <nav id="hamburger-menu">
+            <ul class="hamburger-menu">
+              <li>
+                <a href="#">투어경북</a>
+              </li>
+              <li>
+                <a href="#">숙박</a>
+                <ul>
+                  <li><a href="#">호텔</a></li>
+                  <li><a href="#">펜션</a></li>
+                  <li><a href="#">게스트하우스</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#">문화유산</a>
+                <ul>
+                  <li><a href="#">세계문화유산</a></li>
+                  <li><a href="#">경주의역사</a></li>
+                  <li><a href="#">분류별유산</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#">체험예약/안내</a>
+                <ul>
+                  <li><a href="#">체험예약</a></li>
+                  <li><a href="#">관광안내</a></li>
+                  <li><a href="#">주변관광지</a></li>
+                  <li><a href="#">문화재투어</a></li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
         </div>
       </div>
     </header>
@@ -67,5 +101,71 @@
     <footer id="footer">
       <div class="wrap"></div>
     </footer>
+    <div id="modal-group">
+      <input type="radio" name="login-modal" id="open-login-modal" class="d-none" />
+      <input type="radio" name="login-modal" id="close-login-modal" class="d-none" checked />
+      <div id="login-modal">
+        <div class="modal">
+          <div class="modal-header">
+            <h2>로그인</h2>
+            <label for="close-login-modal" class="close-modal"><img src="images/icon/x.svg" alt="종료" /></label>
+          </div>
+          <div class="modal-content">
+            <form action="#" method="post">
+              <div class="input-group">
+                <label for="login-id">아이디</label>
+                <input type="text" name="login-id" id="login-id" />
+              </div>
+              <div class="input-group">
+                <label for="login-pw">비밀번호</label>
+                <input type="password" name="login-pw" id="login-pw" />
+              </div>
+              <button type="submit">로그인</button>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <label for="close-login-modal" class="close-modal">종료</label>
+          </div>
+        </div>
+      </div>
+      <input type="radio" name="join-modal" id="open-join-modal" class="d-none" />
+      <input type="radio" name="join-modal" id="close-join-modal" class="d-none" checked />
+      <div id="join-modal">
+        <div class="modal">
+          <div class="modal-header">
+            <h2>회원가입</h2>
+            <label for="close-join-modal" class="close-modal"><img src="images/icon/x.svg" alt="종료" /></label>
+          </div>
+          <div class="modal-content">
+            <form action="#" method="post">
+              <div class="input-group">
+                <label for="join-id">아이디</label>
+                <input type="text" name="join-id" id="join-id" />
+              </div>
+              <div class="input-group">
+                <label for="join-pw">비밀번호</label>
+                <input type="password" name="join-pw" id="join-pw" />
+              </div>
+              <div class="input-group">
+                <label for="join-pw-check">비밀번호 확인</label>
+                <input type="password" name="join-pw-check" id="join-pw-check" />
+              </div>
+              <div class="input-group">
+                <label for="join-name">이름</label>
+                <input type="text" name="join-name" id="join-name" />
+              </div>
+              <div class="input-group">
+                <label for="join-phone">휴대폰번호</label>
+                <input type="text" name="join-phone" id="join-phone" />
+              </div>
+              <button type="submit">회원가입</button>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <label for="close-join-modal" class="close-modal">종료</label>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
