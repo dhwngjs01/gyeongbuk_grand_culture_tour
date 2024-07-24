@@ -286,134 +286,6 @@ body {
   visibility: visible;
 }
 
-/* 모달 팝업창 */
-
-/* 로그인 모달 */
-
-#login-modal {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 99999;
-}
-
-#login-modal > .modal {
-  width: 400px;
-  background-color: #fff;
-  margin: 100px auto;
-  padding: 20px;
-  border-radius: 10px;
-}
-
-.modal-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid #bfbfbf;
-}
-
-.modal-header > .close-modal > img {
-  width: 20px;
-  height: 20px;
-  cursor: pointer;
-}
-
-.modal-content > h2 {
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-
-.modal-content .input-group {
-  margin-bottom: 20px;
-}
-
-.modal-content .input-group > label {
-  display: block;
-  margin-bottom: 10px;
-}
-
-.modal-content .input-group > input {
-  width: 100%;
-  height: 40px;
-  border: 1px solid #999;
-  border-radius: 7px;
-  padding: 0 10px;
-}
-
-.modal-content button {
-  width: 100%;
-  height: 40px;
-  border: 0;
-  background-color: #16a35d;
-  color: #fff;
-  border-radius: 7px;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-.modal-footer {
-  border-top: 1px solid #bfbfbf;
-  margin-top: 20px;
-  padding-top: 20px;
-  display: flex;
-  justify-content: end;
-}
-
-.modal-footer > label {
-  cursor: pointer;
-  color: #fff;
-  font-size: 16px;
-  border: 0;
-  background-color: #e10701;
-  border-radius: 7px;
-  padding: 5px 10px;
-}
-
-/* 회원가입 모달 */
-#join-modal {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 99999;
-}
-
-#join-modal > .modal {
-  width: 400px;
-  background-color: #fff;
-  margin: 100px auto;
-  padding: 20px;
-  border-radius: 10px;
-}
-
-/* 모달 팝업창 제어 */
-/* 로그인 모달 */
-#open-login-modal:checked ~ #login-modal {
-  display: block;
-}
-
-#close-login-modal:checked ~ #login-modal {
-  display: none;
-}
-
-/* 회원가입 모달 */
-#open-join-modal:checked ~ #join-modal {
-  display: block;
-}
-
-#close-join-modal:checked ~ #join-modal {
-  display: none;
-}
-
 /* 비주얼영역 */
 #main-visual {
   position: relative;
@@ -627,7 +499,8 @@ body {
   opacity: 1;
 }
 
-.best5-modal-container {
+/* 모달 팝업창 공통 설정 */
+.modal-container {
   display: none;
   position: fixed;
   left: 0;
@@ -638,17 +511,108 @@ body {
   z-index: 99999;
 }
 
-.best5-modal {
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #bfbfbf;
+}
+
+.modal-header > .close-modal > img {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.modal-content > h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.modal-content .input-group {
+  margin-bottom: 20px;
+}
+
+.modal-content .input-group > label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.modal-content .input-group > input {
+  width: 100%;
+  height: 40px;
+  border: 1px solid #999;
+  border-radius: 7px;
+  padding: 0 10px;
+}
+
+.modal-content button {
+  width: 100%;
+  height: 40px;
+  border: 0;
+  background-color: #16a35d;
+  color: #fff;
+  border-radius: 7px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.modal-footer {
+  border-top: 1px solid #bfbfbf;
+  margin-top: 20px;
+  padding-top: 20px;
+  display: flex;
+  justify-content: end;
+}
+
+.modal-footer > label {
+  cursor: pointer;
+  color: #fff;
+  font-size: 16px;
+  border: 0;
+  background-color: #e10701;
+  border-radius: 7px;
+  padding: 5px 10px;
+}
+
+/* 로그인 모달 */
+.login-modal {
+  width: 400px;
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
   background-color: #fff;
-  margin: 0 auto;
   padding: 20px;
   border-radius: 10px;
+}
+
+/* 회원가입 모달 */
+.join-modal {
+  width: 400px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* 경북Best5 모달 */
+.best5-modal {
+  position: absolute;
+  width: 50vw;
   height: 80vh;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   overflow-y: scroll;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
 }
 
 .best5-modal > .modal-header > h2 {
@@ -691,32 +655,40 @@ body {
   z-index: 999;
 }
 
-#close-best5-modal:checked ~ .best5-modal-1,
-#close-best5-modal:checked ~ .best5-modal-2,
-#close-best5-modal:checked ~ .best5-modal-3,
-#close-best5-modal:checked ~ .best5-modal-4,
-#close-best5-modal:checked ~ .best5-modal-5 {
+/* 모달 팝업창 제어 */
+/* 로그인 모달 제어 */
+#open-login-modal:checked ~ #login-modal {
+  display: block;
+}
+
+#close-login-modal:checked ~ #login-modal {
   display: none;
 }
 
-#open-best5-modal-1:checked ~ .best5-modal-1 {
+/* 회원가입 모달 제어 */
+#open-join-modal:checked ~ #join-modal {
   display: block;
 }
 
-#open-best5-modal-2:checked ~ .best5-modal-2 {
+#close-join-modal:checked ~ #join-modal {
+  display: none;
+}
+
+/* 경북Best5 모달 제어 */
+#open-best5-modal-1:checked ~ #best5-modal-1,
+#open-best5-modal-2:checked ~ #best5-modal-2,
+#open-best5-modal-3:checked ~ #best5-modal-3,
+#open-best5-modal-4:checked ~ #best5-modal-4,
+#open-best5-modal-5:checked ~ #best5-modal-5 {
   display: block;
 }
 
-#open-best5-modal-3:checked ~ .best5-modal-3 {
-  display: block;
-}
-
-#open-best5-modal-4:checked ~ .best5-modal-4 {
-  display: block;
-}
-
-#open-best5-modal-5:checked ~ .best5-modal-5 {
-  display: block;
+#close-best5-modal:checked ~ #best5-modal-1,
+#close-best5-modal:checked ~ #best5-modal-2,
+#close-best5-modal:checked ~ #best5-modal-3,
+#close-best5-modal:checked ~ #best5-modal-4,
+#close-best5-modal:checked ~ #best5-modal-5 {
+  display: none;
 }
 
 /* 공통 스타일 */
