@@ -409,7 +409,6 @@ body {
 }
 
 /* 경북 Best 5 */
-
 #best5 > h2 {
   font-size: 40px;
   margin: 80px 0;
@@ -487,16 +486,201 @@ body {
   line-height: 170%;
 }
 
-.best5-list > li:hover > .best5-image:before {
-  background-color: rgb(0, 0, 0, 0.5);
-}
-
 .best5-list > li:hover {
   flex: 0 1 50%;
 }
 
+.best5-list > li:hover > .best5-image:before {
+  background-color: rgb(0, 0, 0, 0.5);
+}
+
 .best5-list > li:hover .best5-text {
   opacity: 1;
+}
+
+/* 경북투어가이드 영역 */
+#tour-guide > h2 {
+  font-size: 40px;
+  margin: 80px 0;
+  text-align: center;
+  font-weight: 600;
+}
+
+.tour-guide-wrap {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: auto auto auto;
+  width: 1500px;
+  margin: 0 auto;
+}
+
+/* 경북투어가이드 첫번째 줄 */
+.guide-image:nth-child(1) {
+  grid-column: span 2;
+}
+
+.guide-image:nth-child(2) {
+  grid-column: span 4;
+}
+
+.guide-image:nth-child(3) {
+  grid-column: span 2;
+}
+
+.guide-image:nth-child(4) {
+  grid-column: span 2;
+}
+
+/* 경북투어가이드 두번째 줄 */
+.guide-image:nth-child(5) {
+  grid-column: span 3;
+}
+
+.guide-image:nth-child(6) {
+  grid-column: span 4;
+}
+
+.guide-image:nth-child(7) {
+  grid-column: span 3;
+}
+
+/* 경북투어가이드 세번째 줄 */
+.guide-image:nth-child(8) {
+  grid-column: span 6;
+}
+
+.guide-image:nth-child(9) {
+  grid-column: span 4;
+}
+
+/* .guide-image:nth-child(10) {
+  grid-column: span 3;
+} */
+
+/* 경북투어가이드 이미지 */
+.guide-image {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+.guide-image:nth-child(1) {
+  background-image: url("../images/tour-guide/1.jpg");
+}
+.guide-image:nth-child(2) {
+  background-image: url("../images/tour-guide/2.jpg");
+}
+.guide-image:nth-child(3) {
+  background-image: url("../images/tour-guide/3.jpg");
+}
+.guide-image:nth-child(4) {
+  background-image: url("../images/tour-guide/4.jpg");
+}
+.guide-image:nth-child(5) {
+  background-image: url("../images/tour-guide/5.jpg");
+}
+.guide-image:nth-child(6) {
+  background-image: url("../images/tour-guide/6.jpg");
+}
+.guide-image:nth-child(7) {
+  background-image: url("../images/tour-guide/7.jpg");
+}
+.guide-image:nth-child(8) {
+  background-image: url("../images/tour-guide/9.jpg");
+}
+.guide-image:nth-child(9) {
+  background-image: url("../images/tour-guide/10.jpg");
+}
+/* .guide-image:nth-child(9) {
+  background-image: url("../images/tour-guide/8.jpg");
+} */
+
+.guide-text {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  transition: 0.3s;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 10;
+}
+
+.guide-text > h2 {
+  font-size: 30px;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  font-weight: 500;
+  color: #fff;
+}
+
+.guide-text > p {
+  font-size: 16px;
+  line-height: 150%;
+  color: #efefef;
+}
+
+.guide-image > .guide-pos {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.guide-top-pos {
+  top: 0;
+  left: 0;
+  transform-origin: 100% 100%;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.guide-right-pos {
+  top: 0;
+  right: 0;
+  transform-origin: 0% 100%;
+  transform: translate(50%, -50%) rotate(45deg);
+}
+
+.guide-bottom-pos {
+  bottom: 0;
+  left: 0;
+  transform-origin: 0 0;
+  transform: translate(50%, 50%) rotate(45deg);
+}
+
+.guide-left-pos {
+  top: 0;
+  left: 0;
+  transform-origin: 100% 0;
+  transform: translate(-50%, 50%) rotate(45deg);
+}
+
+/* 경북투어가이드 텍스트 위치 초기화 */
+.guide-top-text {
+  transform: translate(0, -100%);
+}
+.guide-right-text {
+  transform: translate(100%, 0);
+}
+
+.guide-bottom-text {
+  transform: translate(0, 100%);
+}
+
+.guide-left-text {
+  transform: translate(-100%, 0);
+}
+
+.guide-text:hover {
+  transform: translate(0, 0);
+}
+
+.guide-top-pos:hover ~ .guide-top-text,
+.guide-right-pos:hover ~ .guide-right-text,
+.guide-bottom-pos:hover ~ .guide-bottom-text,
+.guide-left-pos:hover ~ .guide-left-text {
+  transform: translate(0, 0);
 }
 
 /* 모달 팝업창 공통 설정 */
